@@ -1,3 +1,12 @@
-<img src="/pathIU.jpg" width="300px" height="300px" title="px(픽셀) 크기 설정" alt="IU"></img><br/>
+ ##노래추천
+![Alt text](IU.jpg)
 
-ㅈㅈ
+* #### 가수: 아이유
+* #### 발매시기: 2019.11.18
+* > unlucky   
+  > 그 사람   
+  > BLUEMING   
+  > 시간의 바깥   
+  > 자장가   
+  > LOVE POEM   
+  > 
