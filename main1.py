@@ -1,2 +1,2 @@
-
-print("1hiasdddfa")
+print("ffdkkafadf")
+print("wow")
