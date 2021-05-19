@@ -1,3 +1,1 @@
-print("ffdkkafadf")
-print("wow")
-print(5)
+print(444)
