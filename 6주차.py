@@ -2,7 +2,7 @@ import bs4
 import requests
 
 headers = {
-    'User-Agent)': 'Not Crawling X)'
+    'User-Agent': 'Not Crawling X('
 }
 
 response = requests.get('https://kin.naver.com/', headers=headers).text
