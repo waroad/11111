@@ -1,7 +1,5 @@
 import bs4
 import requests
-import csv
-import datetime
 
 headers = {
     'User-Agent': 'Not Crawling X'
@@ -15,9 +13,8 @@ get_ranking = lambda trend: int(trend.select_one('span.no').text)
 get_content = lambda trend: trend.select_one('a.ranking_title').text
 
 with open('kin_trend.csv', 'w') as file:
-    writer = csv.writer(file)
-    writer.writerow(['네이버 지식인 많이 본 Q&A', datetime.datetime.now().strftime('%Y/%m/%d, %H:%M:%S')])
+    file.write("순위, 이름\n")
     for trend in sorted(trends, key=get_ranking):
         rank = get_ranking(trend)
         content = get_content(trend)
-        writer.writerow([f'{rank}위', content])
+        file.write(f'{rank}위, {content}\n')
