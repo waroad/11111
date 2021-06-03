@@ -2,19 +2,16 @@ import bs4
 import requests
 
 headers = {
-    'User-Agent': 'Not Crawling X'
+    'User-Agent': 'Not_Crawling X)'
 }
 
-response = requests.get('https://kin.naver.com/', headers=headers).text
-soup = bs4.BeautifulSoup(response, 'html.parser')
-trends = soup.select('#rankingChart > ul > li')
+response = requests.get('https://kin.naver.com/',headers=headers).text
+soup=bs4.BeautifulSoup(response, 'html.parser')
 
-get_ranking = lambda trend: int(trend.select_one('span.no').text)
-get_content = lambda trend: trend.select_one('a.ranking_title').text
+ranks = soup.select('#rankingChart > ul > li')
 
-with open('kin_trend.csv', 'w') as file:
-    file.write("순위, 이름\n")
-    for trend in sorted(trends, key=get_ranking):
-        rank = get_ranking(trend)
-        content = get_content(trend)
-        file.write(f'{rank}위, {content}\n')
+with open('kin_trend.csv','w') as f:
+    for rank in ranks:
+        num = rank.select_one('span.no').text
+        title = rank.select_one('a.ranking_title').text
+        f.write(f'{num},{title}\n')
